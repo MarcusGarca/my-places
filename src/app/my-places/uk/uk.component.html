@@ -1,0 +1,37 @@
+<div class="container-places">
+  <mat-form-field>
+    <mat-label>Ponto de partida</mat-label>
+    <mat-select [(ngModel)]="mapsService.origin">
+      <mat-option [value]="''">-- selecione --</mat-option>
+      <mat-option *ngFor="let place of londonPlaces" [value]="place.address">
+        {{ place.title }}
+      </mat-option>
+    </mat-select>
+    <mat-hint align="end">origem partida</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Destino</mat-label>
+    <mat-select [(ngModel)]="mapsService.destination">
+      <mat-option [value]="''">-- selecione --</mat-option>
+      <mat-option *ngFor="let place of londonPlaces" [value]="place.address">
+        {{ place.title }}
+      </mat-option>
+    </mat-select>
+    <mat-hint align="end">destino final</mat-hint>
+  </mat-form-field>
+
+  <div class="button-container">
+    <a
+      mat-fab
+      extended
+      *ngIf="mapsService.origin && mapsService.destination"
+      [href]="mapsService.getGoogleMapsRoute()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <mat-icon>location_on</mat-icon>
+      Ver rota no Google Maps
+    </a>
+  </div>
+</div>

@@ -1,4 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@fontsource/poppins/300.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f0f0f0;
+}
+body,
+p,
+span,
+a,
+li,
+button,
+input,
+select,
+textarea {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.title h3 {
+  margin-right: 10px;
+}
+
+.container-places {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 400px; /* Example: fixed width */
+}
+
+/* Or targeting the mat-select directly */
+mat-select {
+  width: 100%; /* Example: take full width of parent */
+}
+
+.button-container a {
+  margin-top: 2rem;
+  background-color: #ab103c; /* Your desired background color */
+  color: #ffffff; /* Your desired text/icon color */
+}
+
+@media screen and (max-width: 600px) {
+  mat-form-field {
+    width: 95vw; /* Example: fixed width */
+  }
+}
