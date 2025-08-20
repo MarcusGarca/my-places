@@ -1,0 +1,30 @@
+<div>
+  <label for="origin">Ponto de partida:</label>
+  <select id="origin" [(ngModel)]="origin">
+    <option [ngValue]="''">-- selecione --</option>
+    <option *ngFor="let place of places" [ngValue]="place.address">
+      {{ place.title }}
+    </option>
+  </select>
+</div>
+
+<div>
+  <label for="destination">Destino:</label>
+  <select id="destination" [(ngModel)]="destination">
+    <option [ngValue]="''">-- selecione --</option>
+    <option *ngFor="let place of places" [ngValue]="place.address">
+      {{ place.title }}
+    </option>
+  </select>
+</div>
+
+<div style="margin-top: 1rem">
+  <a
+    *ngIf="origin && destination"
+    [href]="getGoogleMapsRoute()"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ver rota no Google Maps
+  </a>
+</div>
