@@ -45,6 +45,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: #39247e;
 }
 
 .title {
@@ -83,4 +84,10 @@ mat-select {
   mat-form-field {
     width: 95vw; /* Example: fixed width */
   }
+}
+
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs
+  > .mat-mdc-tab-header
+  .mat-mdc-tab {
+  height: 4.0625rem;
 }
