@@ -1,0 +1,15 @@
+.flags {
+  width: 6.5rem;
+  height: 3.2rem;
+  object-fit: cover;
+  margin: 5px 5px 5px 0;
+  border-radius: 10px;
+  box-shadow: rgba(2, 8, 15, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.007) 0px 1px 0px inset;
+}
+
+.flags:active {
+  border: solid 2px #424242;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
