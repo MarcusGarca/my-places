@@ -3,9 +3,11 @@
     <mat-label>Ponto de partida</mat-label>
     <mat-select [(ngModel)]="mapsService.origin">
       <mat-option [value]="''">-- selecione --</mat-option>
-      <mat-option *ngFor="let place of londonPlaces" [value]="place.address">
-        {{ place.title }}
-      </mat-option>
+      <mat-optgroup *ngFor="let group of londonPlaces" [label]="group.category">
+        <mat-option *ngFor="let place of group.places" [value]="place.address">
+          {{ place.title }}
+        </mat-option>
+      </mat-optgroup>
     </mat-select>
     <mat-hint align="end">origem partida</mat-hint>
   </mat-form-field>
@@ -14,9 +16,11 @@
     <mat-label>Destino</mat-label>
     <mat-select [(ngModel)]="mapsService.destination">
       <mat-option [value]="''">-- selecione --</mat-option>
-      <mat-option *ngFor="let place of londonPlaces" [value]="place.address">
-        {{ place.title }}
-      </mat-option>
+      <mat-optgroup *ngFor="let group of londonPlaces" [label]="group.category">
+        <mat-option *ngFor="let place of group.places" [value]="place.address">
+          {{ place.title }}
+        </mat-option>
+      </mat-optgroup>
     </mat-select>
     <mat-hint align="end">destino final</mat-hint>
   </mat-form-field>

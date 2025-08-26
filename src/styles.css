@@ -91,3 +91,10 @@ mat-select {
   .mat-mdc-tab {
   height: 4.0625rem;
 }
+
+mat-optgroup .mat-mdc-optgroup-label {
+  color: #39247e;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+}
