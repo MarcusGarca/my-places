@@ -98,6 +98,7 @@ mat-optgroup .mat-mdc-optgroup-label {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .button-container a {
