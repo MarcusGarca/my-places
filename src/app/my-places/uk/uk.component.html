@@ -8,7 +8,11 @@
       <mat-option [value]="''">-- selecione --</mat-option>
 
       <!-- opção para usar a localização atual -->
-      <mat-option value="current-location">Minha localização atual</mat-option>
+      <mat-option value="current-location"
+        ><strong class="minha-localizacao"
+          >Minha localização atual</strong
+        ></mat-option
+      >
 
       <mat-optgroup *ngFor="let group of londonPlaces" [label]="group.category">
         <mat-option *ngFor="let place of group.places" [value]="place.address">

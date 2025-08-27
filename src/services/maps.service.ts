@@ -30,9 +30,22 @@ export class MapsService {
   getGoogleMapsRoute(): string {
     if ((!this.origin && !this.useCurrentLocation) || !this.destination) return '#';
 
-    const start = this.useCurrentLocation ? this.currentCoords : encodeURIComponent(this.origin);
+    let start = '';
     const end = encodeURIComponent(this.destination);
 
-    return `https://www.google.com/maps/dir/${start}/${end}`;
+    if (this.useCurrentLocation) {
+      // no mobile é melhor deixar o Maps usar a localização automática
+      start = this.currentCoords ? this.currentCoords : '';
+    } else {
+      start = encodeURIComponent(this.origin);
+    }
+
+    if (this.useCurrentLocation && !this.currentCoords) {
+      // Se não pegamos coordenadas, deixa o Maps decidir a origem
+      return `https://www.google.com/maps/dir/?api=1&destination=${end}`;
+    }
+
+    return `https://www.google.com/maps/dir/?api=1&origin=${start}&destination=${end}`;
   }
+
 }
