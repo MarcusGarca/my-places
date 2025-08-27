@@ -106,5 +106,17 @@ export class FrComponent {
     }
   ];
 
+  onOriginChange(value: string) {
+    if (value === 'current-location') {
+      this.mapsService.setCurrentLocation().catch(err => {
+        console.error('Erro ao obter localização:', err);
+        alert('Não foi possível obter sua localização.');
+      });
+    } else {
+      this.mapsService.useCurrentLocation = false;
+    }
+  }
+
+
 
 }
