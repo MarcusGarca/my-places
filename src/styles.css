@@ -102,4 +102,6 @@ mat-optgroup .mat-mdc-optgroup-label {
   color: #ab103c;
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
