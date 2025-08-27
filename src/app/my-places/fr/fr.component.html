@@ -10,7 +10,9 @@
       <!-- opção para usar a localização atual -->
       <mat-option value="current-location"
         ><strong class="minha-localizacao"
-          >Minha localização atual</strong
+          ><mat-icon>emoji_people</mat-icon> Minha localização atual<mat-icon
+            >emoji_people</mat-icon
+          ></strong
         ></mat-option
       >
 
@@ -45,6 +47,8 @@
       [href]="mapsService.getGoogleMapsRoute()"
       target="_blank"
       rel="noopener noreferrer"
+      matTooltip="Abrir rota no Google Maps"
+      aria-label="Ver rota no Google Maps"
     >
       <mat-icon>location_on</mat-icon>
       Ver rota no Google Maps
