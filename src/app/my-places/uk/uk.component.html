@@ -36,10 +36,10 @@
     </mat-select>
     <mat-hint align="end">destino final</mat-hint>
   </mat-form-field>
-
+  <br />
   <div class="button-container">
     <a
-      mat-fab
+      class="button"
       extended
       *ngIf="mapsService.origin && mapsService.destination"
       [href]="mapsService.getGoogleMapsRoute()"
@@ -48,8 +48,8 @@
       matTooltip="Abrir rota no Google Maps"
       aria-label="Ver rota no Google Maps"
     >
-      <mat-icon>location_on</mat-icon>
-      Ver rota no Google Maps
+      <img src="/assets/images/maps-logo.png" alt="" />
+      <strong>Ver no Maps</strong>
     </a>
   </div>
 </div>

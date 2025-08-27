@@ -74,12 +74,6 @@ mat-select {
   width: 100%; /* Example: take full width of parent */
 }
 
-.button-container a {
-  margin-top: 2rem;
-  background-color: #ab103c; /* Your desired background color */
-  color: #ffffff; /* Your desired text/icon color */
-}
-
 @media screen and (max-width: 600px) {
   mat-form-field {
     width: 95vw; /* Example: fixed width */
@@ -104,4 +98,40 @@ mat-optgroup .mat-mdc-optgroup-label {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+}
+
+.button-container a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #30187f;
+}
+
+.button,
+.button:focus {
+  height: 120px; /* quadrado */
+  width: 120px; /* quadrado */
+  border-radius: 0.7rem;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(224, 224, 224));
+  border: 2px solid #39247e;
+  box-shadow: 0 5px 0 #39247e; /* sombra para efeito 3D */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:active {
+  transform: translateY(4px); /* botão “afunda” */
+  box-shadow: 0 1px 0 #39247e; /* sombra menor ao clicar */
+}
+
+.button img {
+  width: 60%; /* ajusta tamanho da imagem dentro do botão */
+  height: auto;
+  object-fit: contain;
+  pointer-events: none; /* evita conflito com clique */
 }
