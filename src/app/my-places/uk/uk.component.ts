@@ -62,5 +62,17 @@ export class UkComponent {
     }
   ];
 
+  onOriginChange(value: string) {
+    if (value === 'current-location') {
+      this.mapsService.setCurrentLocation().catch(err => {
+        console.error('Erro ao obter localização:', err);
+        // opcional: você pode mostrar um snackbar/toast de erro aqui
+      });
+    } else {
+      this.mapsService.useCurrentLocation = false;
+    }
+  }
+
+
 
 }
