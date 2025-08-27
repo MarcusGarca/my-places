@@ -1,8 +1,15 @@
 <div class="container-places">
   <mat-form-field>
     <mat-label>Ponto de partida</mat-label>
-    <mat-select [(ngModel)]="mapsService.origin">
+    <mat-select
+      [(ngModel)]="mapsService.origin"
+      (selectionChange)="onOriginChange($event.value)"
+    >
       <mat-option [value]="''">-- selecione --</mat-option>
+
+      <!-- opção para usar a localização atual -->
+      <mat-option value="current-location">Minha localização atual</mat-option>
+
       <mat-optgroup *ngFor="let group of francePlaces" [label]="group.category">
         <mat-option *ngFor="let place of group.places" [value]="place.address">
           {{ place.title }}
@@ -11,6 +18,7 @@
     </mat-select>
     <mat-hint align="end">origem partida</mat-hint>
   </mat-form-field>
+
   <br /><br />
   <mat-form-field>
     <mat-label>Destino</mat-label>
