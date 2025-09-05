@@ -109,14 +109,31 @@ mat-optgroup .mat-mdc-optgroup-label {
   color: #30187f;
 }
 
+/* Estilo das bandeiras das tabs*/
+.flags {
+  width: 6.5rem;
+  height: 3.2rem;
+  object-fit: cover;
+  margin: 5px 5px 5px 0;
+  border-radius: 10px;
+  box-shadow: rgba(2, 8, 15, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.007) 0px 1px 0px inset;
+}
+
+.flags:active {
+  border: solid 2px #424242;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
 .button,
 .button:focus {
-  height: 120px; /* quadrado */
-  width: 120px; /* quadrado */
+  height: 120px;
+  width: 120px;
   border-radius: 0.7rem;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(224, 224, 224));
   border: 2px solid #39247e;
-  box-shadow: 0 5px 0 #39247e; /* sombra para efeito 3D */
+  box-shadow: 0 5px 0 #39247e;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -126,13 +143,13 @@ mat-optgroup .mat-mdc-optgroup-label {
 }
 
 .button:active {
-  transform: translateY(4px); /* botão “afunda” */
-  box-shadow: 0 1px 0 #39247e; /* sombra menor ao clicar */
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #39247e;
 }
 
 .button img {
-  width: 60%; /* ajusta tamanho da imagem dentro do botão */
+  width: 60%;
   height: auto;
   object-fit: contain;
-  pointer-events: none; /* evita conflito com clique */
+  pointer-events: none;
 }
