@@ -1,0 +1,13 @@
+#btn-menu {
+  position: fixed;
+  margin: 0.625rem 0 0 0.625rem;
+  font-size: 0.625rem;
+}
+
+mat-icon {
+  transition: transform 0.3s ease;
+}
+
+mat-icon.rotating {
+  transform: rotate(180deg);
+}

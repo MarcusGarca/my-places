@@ -1,0 +1,22 @@
+<button
+  id="btn-menu"
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  aria-label="Botão de menu"
+  #menuTrigger="matMenuTrigger"
+  (menuOpened)="rotacionar = true"
+  (menuClosed)="rotacionar = false"
+>
+  <mat-icon [class.rotating]="rotacionar">apps</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+  <a mat-menu-item routerLink="/" routerLinkActive="active">
+    <mat-icon>map</mat-icon>
+    <span>Mapas</span>
+  </a>
+  <a mat-menu-item routerLink="/our-timeline" routerLinkActive="active">
+    <mat-icon>timeline</mat-icon>
+    <span>Cronograma</span>
+  </a>
+</mat-menu>
