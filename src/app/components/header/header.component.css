@@ -1,13 +1,24 @@
 #btn-menu {
   position: fixed;
-  margin: 0.625rem 0 0 0.625rem;
-  font-size: 0.625rem;
+  right: 20px;
+  top: 20px;
+  width: 70px; /* tamanho do botão */
+  height: 70px; /* tamanho do botão */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* remove padding padrão do mat-icon-button */
+  border-radius: 50%; /* círculo */
+  background-color: #dfdfdf;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-mat-icon {
+#btn-menu mat-icon {
+  font-size: 25px;
   transition: transform 0.3s ease;
 }
 
-mat-icon.rotating {
+#btn-menu mat-icon.rotating {
   transform: rotate(180deg);
 }
