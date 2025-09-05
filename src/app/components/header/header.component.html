@@ -7,7 +7,7 @@
   (menuOpened)="rotacionar = true"
   (menuClosed)="rotacionar = false"
 >
-  <mat-icon [class.rotating]="rotacionar">apps</mat-icon>
+  <mat-icon [class.rotating]="rotacionar">density_medium</mat-icon>
 </button>
 
 <mat-menu #menu="matMenu">
@@ -16,7 +16,7 @@
     <span>Mapas</span>
   </a>
   <a mat-menu-item routerLink="/our-timeline" routerLinkActive="active">
-    <mat-icon>timeline</mat-icon>
-    <span>Cronograma</span>
+    <mat-icon>airline_stops</mat-icon>
+    <span>Roteiros</span>
   </a>
 </mat-menu>
