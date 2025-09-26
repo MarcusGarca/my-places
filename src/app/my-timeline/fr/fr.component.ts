@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { DayPlan } from '../../../models/timeline-model';
 import { MatIconModule } from '@angular/material/icon';
+import { MapsService } from '../../../services/maps.service';
 
 @Component({
   selector: 'app-fr',
@@ -10,107 +11,268 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './fr.component.css'
 })
 export class FrComponent {
+  constructor(public mapsService: MapsService) { }
   parisTimeline: DayPlan[] = [
     {
-      day: 1,
-      date: '01/10',
-      activities: [
+      day: "Dia 1 - 05/10",
+      itens: [
         {
-          time: '16:35',
-          title: 'Chegada em Londres',
-          description: 'Transfer do Bola',
+          item: "Transfer Daniel - chegada em Paris",
+          time: "14:00",
+          contact: "",
+          address: "",
+          reservation: ""
         },
         {
-          title: 'Hotel Radisson Bloomsbury',
-          address: '9-13 Bloomsbury St, London WC1B 3QD, Reino Unido',
-          location: { lat: 51.5167, lng: -0.1295 }
+          item: "Carrefour - compras rápidas",
+          time: "16:00",
+          contact: "",
+          address: "Carrefour, Paris, França",
+          reservation: ""
         },
         {
-          title: 'Opções de jantar',
-          visited: true,
-          stops: [
-            { name: 'Restaurante do Hotel-Dalloway Terrace', location: { lat: 51.5007, lng: -0.1246 } },
-            { name: 'Bloomsbury Street Kitchen', location: { lat: 51.522121, lng: -0.129420 } },
-            { name: 'The Lamb & Flag (Covent Garden)', location: { lat: 51.5117, lng: -0.1257 } },
-            { name: 'The French House (Soho)', location: { lat: 51.5130, lng: -0.1320 } }
-          ]
+          item: "Café Doux Margot - pausa para café/snack",
+          time: "18:30",
+          contact: "",
+          address: "6, Place Saint-Germain-des-Prés, 75006 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Ou Café de Flore - opção de café alternativo",
+          time: "18:30",
+          contact: "",
+          address: "172 Boulevard Saint-Germain, 75006 Paris, França",
+          reservation: ""
         }
       ]
     },
     {
-      day: 2,
-      date: '02/10',
-      activities: [
+      day: "Dia 2 - 06/10",
+      itens: [
         {
-          time: '10:00',
-          title: 'Tour com Guia',
-          visited: true,
-          stops: [
-            { name: 'Big Ben', location: { lat: 51.5007, lng: -0.1246 } },
-            { name: 'Parlamento', location: { lat: 51.4995, lng: -0.1248 } },
-            { name: 'Abadia Westminster', location: { lat: 51.4993, lng: -0.1273 } },
-            { name: 'Trafalgar Square', location: { lat: 51.508, lng: -0.1281 } },
-            { name: 'Buckingham Palace', location: { lat: 51.5014, lng: -0.1419 } }
-          ]
-        },
-        {
-          time: '14:00',
-          title: 'Almoço',
-          suggestion: 'Fish',
-          visited: true,
-          stops: [
-            { name: 'Borough Market', location: { lat: 51.5054, lng: -0.0911 } },
-          ]
-
-        },
-        {
-          time: '15:00',
-          title: 'Atrações da tarde',
-          stops: [
-            { name: 'Tower Bridge', location: { lat: 51.5055, lng: -0.0754 } },
-            { name: 'Torre de Londres', location: { lat: 51.5081, lng: -0.0759 } },
-            { name: 'London Bridge / The Vault Pub', location: { lat: 51.5079, lng: -0.0877 } },
-            { name: 'London Eye', location: { lat: 51.5033, lng: -0.1196 } },
-            { name: 'Catedral de São Paulo', location: { lat: 51.5138, lng: -0.0984 } }
-          ]
+          item: "Viagem à Bruges - dia inteiro",
+          time: "08:00",
+          contact: "",
+          address: "",
+          reservation: ""
         }
       ]
     },
     {
-      day: 3,
-      date: '03/10',
-      activities: [
-        { title: 'British Museum', visited: true, location: { lat: 51.5194, lng: -0.127 } },
-        { title: 'Abbey Road', location: { lat: 51.5321, lng: -0.1775 } },
-        { title: 'Camden Town', location: { lat: 51.5416, lng: -0.142 } },
-        { title: 'Covent Garden', location: { lat: 51.512, lng: -0.1225 } },
-        { title: 'Oxford Street', location: { lat: 51.5145, lng: -0.1444 } },
-        { title: 'Piccadilly Circus', location: { lat: 51.5098, lng: -0.1357 } }
+      day: "Dia 3 - 07/10",
+      itens: [
+        {
+          item: "Praça da Concórdia - ponto central histórico, obelisco e jardins",
+          time: "09:30",
+          contact: "",
+          address: "Place de la Concorde, 75008 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Museu do Louvre - ícone cultural e artístico de Paris",
+          time: "09:50",
+          contact: "",
+          address: "Rue de Rivoli, 75001 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Margens do Sena e Pontes - caminhada panorâmica e fotos",
+          time: "10:20",
+          contact: "",
+          address: "Seine River Banks, 75001 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Ilha de La Cité e Palácio da Justiça - coração histórico de Paris",
+          time: "10:50",
+          contact: "",
+          address: "Île de la Cité, 75001 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Catedral de Notre-Dame - visita externa e fotos",
+          time: "11:10",
+          contact: "",
+          address: "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Hotel de Ville - prefeitura e arquitetura impressionante",
+          time: "11:30",
+          contact: "",
+          address: "Place de l'Hôtel de Ville, 75004 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Bairro Latino - passeio pelas ruas históricas e cafés",
+          time: "11:50",
+          contact: "",
+          address: "Quartier Latin, 75005 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Arco do Triunfo - ponto turístico emblemático, fotos",
+          time: "12:20",
+          contact: "",
+          address: "Place Charles de Gaulle, 75008 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Avenida des Champs-Élysées - caminhada e compras rápidas",
+          time: "12:40",
+          contact: "",
+          address: "Avenue des Champs-Élysées, 75008 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Torre Eiffel - vista icônica e fotos no Trocadéro",
+          time: "13:10",
+          contact: "",
+          address: "Trocadéro, 75016 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Ópera Garnier - visita externa ou rápida interna",
+          time: "13:40",
+          contact: "",
+          address: "8 Rue Scribe, 75009 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Montmartre e Sacré-Cœur - bairro artístico e vista panorâmica",
+          time: "14:10",
+          contact: "",
+          address: "Montmartre, 75018 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Almoço no Cepe et Figue",
+          time: "14:30",
+          contact: "",
+          address: "59, Rue Saint-André des Arts, 75006 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Jantar no Sena - cruzeiro ou restaurante às margens do rio",
+          time: "17:30",
+          contact: "",
+          address: "",
+          reservation: ""
+        },
+        {
+          item: "Torre Eiffel - Trocadéro para fotos",
+          time: "19:00",
+          contact: "",
+          address: "Trocadéro, 75016 Paris, França",
+          reservation: ""
+        }
       ]
     },
     {
-      day: 4,
-      date: '04/10',
-      activities: [
-        { title: 'Notting Hill - Portobello Market', location: { lat: 51.5175, lng: -0.2054 } },
-        { title: 'The Pelican Restaurant', location: { lat: 51.5178, lng: -0.2043 } },
-        { title: 'Little Venice', location: { lat: 51.5237, lng: -0.183 } },
-        { title: 'Harrods', location: { lat: 51.4995, lng: -0.163 } },
-        { title: 'Oxford Street e Piccadilly Circus (extra)' }
+      day: "Dia 4 - 08/10",
+      itens: [
+        {
+          item: "Louvre - visita ao museu",
+          time: "09:00",
+          contact: "",
+          address: "Rue de Rivoli, 75001 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Catedral de Notre-Dame - caminhada pelo Pont Neuf ou Pont des Arts",
+          time: "11:00",
+          contact: "",
+          address: "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Panthéon - marco histórico do Quartier Latin",
+          time: "12:00",
+          contact: "",
+          address: "Place du Panthéon, 75005 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Jardin du Luxembourg - passeio no jardim e creperia",
+          time: "13:00",
+          contact: "",
+          address: "Jardin du Luxembourg, 75006 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Saint-Germain-des-Prés - bairro histórico e cultural",
+          time: "14:30",
+          contact: "",
+          address: "Saint-Germain-des-Prés, 75006 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Jantar no Le Procope - restaurante histórico",
+          time: "19:00",
+          contact: "",
+          address: "13 Rue de l'Ancienne Comédie, 75006 Paris, França",
+          reservation: ""
+        }
       ]
     },
     {
-      day: 5,
-      date: '05/10',
-      activities: [
-        { time: '08:00', title: 'Checkout' },
-        { time: '10:20', title: 'Saída pela St Pancras Station', location: { lat: 51.5317, lng: -0.126 } },
-        { title: 'Fortnum & Mason (chá da rainha)', location: { lat: 51.5094, lng: -0.1374 } }
+      day: "Dia 5 - 09/10",
+      itens: [
+        {
+          item: "Compras na Galeries Lafayette e arredores",
+          time: "09:00",
+          contact: "",
+          address: "40 Boulevard Haussmann, 75009 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Isabel Marant - Rue Jacob",
+          time: "10:00",
+          contact: "",
+          address: "Rue Jacob, 75006 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Adidas Champs-Élysées - customização de tênis",
+          time: "11:00",
+          contact: "",
+          address: "88 Av. des Champs-Élysées, 75008 Paris, França",
+          reservation: ""
+        },
+        {
+          item: "Show Sting - Accor Arena (chegada via transfer Daniel)",
+          time: "18:00",
+          contact: "",
+          address: "8 Boulevard de Bercy, 75012 Paris, França",
+          reservation: ""
+        }
+      ]
+    },
+    {
+      day: "Dia 6 - 10/10",
+      itens: [
+        {
+          item: "Checkout do hotel - Transfer Boa",
+          time: "10:00",
+          contact: "",
+          address: "",
+          reservation: ""
+        },
+        {
+          item: "Embarque para Fortaleza",
+          time: "13:20",
+          contact: "",
+          address: "",
+          reservation: ""
+        },
+        {
+          item: "Chegada em Fortaleza",
+          time: "17:30",
+          contact: "",
+          address: "",
+          reservation: ""
+        }
       ]
     }
   ];
-
-  goToLocation(lat: number, lng: number) {
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
-  }
 }
