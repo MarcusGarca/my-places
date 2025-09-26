@@ -176,7 +176,7 @@ export class UkComponent {
           time: "10:30",
           contact: "",
           address: "Great Russell St, London WC1B 3DG, Reino Unido",
-          reservation: ""
+          reservation: "assets/images/uk/reservas/03_10_british_museum.pdf"
         },
         {
           item: "Camden Town - bairro alternativo com mercados, lojas e street food",
