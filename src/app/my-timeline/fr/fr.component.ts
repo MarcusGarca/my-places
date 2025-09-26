@@ -19,7 +19,7 @@ export class FrComponent {
         {
           item: "Transfer Daniel - chegada em Paris",
           time: "14:00",
-          contact: "",
+          contact: "https://wa.me/33620885022?text=Oi,%20Daniel%20chegamos%20em%20Paris!",
           address: "",
           reservation: ""
         },
@@ -52,7 +52,7 @@ export class FrComponent {
         {
           item: "Viagem à Bruges - dia inteiro",
           time: "08:00",
-          contact: "",
+          contact: "https://wa.me/33620885022?text=Oi,%20Daniel%20Estamos%20no%20local%20de%20encontro%20da%20viagem%20a%20Bruges!",
           address: "",
           reservation: ""
         }
@@ -150,7 +150,7 @@ export class FrComponent {
           time: "14:30",
           contact: "",
           address: "59, Rue Saint-André des Arts, 75006 Paris, França",
-          reservation: ""
+          reservation: "assets/images/fr/07_10_cepe_et_figue.jpeg"
         },
         {
           item: "Jantar no Sena - cruzeiro ou restaurante às margens do rio",
@@ -211,7 +211,7 @@ export class FrComponent {
           time: "19:00",
           contact: "",
           address: "13 Rue de l'Ancienne Comédie, 75006 Paris, França",
-          reservation: ""
+          reservation: "assets/images/fr/08_10_le_procope.jpeg"
         }
       ]
     },
@@ -242,7 +242,7 @@ export class FrComponent {
         {
           item: "Show Sting - Accor Arena (chegada via transfer Daniel)",
           time: "18:00",
-          contact: "",
+          contact: "https://wa.me/33620885022?text=Oi,%20Daniel%20Estamos%20no%20local%20de%20encontro%20para%o%20a%20show%20do%20Sting!",
           address: "8 Boulevard de Bercy, 75012 Paris, França",
           reservation: ""
         }
